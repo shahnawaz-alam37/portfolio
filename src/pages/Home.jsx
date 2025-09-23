@@ -1,4 +1,5 @@
 import React from "react";
+import resume from '../assets/resume (1).pdf';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   FaGithub,
@@ -135,6 +136,8 @@ const Home = () => {
                 <Button 
                   variant="outline-light" 
                   size="lg"
+                  href={resume}
+                  download="Shahnawaz_Alam_Resume.pdf"
                   style={{
                     borderRadius: "12px",
                     padding: "12px 32px",
