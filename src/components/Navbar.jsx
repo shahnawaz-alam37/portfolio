@@ -66,6 +66,7 @@ const Navbar = ({ onToggleTheme }) => {
               borderRadius: '50px',
               padding: '8px 24px',
               border: theme.palette.mode === 'dark' ? '2px solid rgba(255, 255, 255, 0.1)' : '2px solid rgba(0, 0, 0, 0.1)',
+              marginLeft: isMobile ? 'auto' : 'initial', // This will push the box to the right in mobile view
             }}
           >
             {/* Desktop Menu */}
@@ -155,7 +156,7 @@ const Navbar = ({ onToggleTheme }) => {
                 </ListItemButton>
               </ListItem>
             ))}
-            <ListItem disablePadding>
+            {/* <ListItem disablePadding>
               <ListItemButton
                 onClick={onToggleTheme}
                 sx={{
@@ -173,7 +174,7 @@ const Navbar = ({ onToggleTheme }) => {
                 />
                 {theme.palette.mode === 'dark' ? <LightMode sx={{ ml: 1 }} /> : <DarkMode sx={{ ml: 1 }} />}
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
           </List>
         </Box>
       </Drawer>
