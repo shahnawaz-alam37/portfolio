@@ -16,18 +16,19 @@ const Events = () => {
     >
       <AnimatedBackground />
       <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            mb: 6,
-            fontWeight: 600,
-            textAlign: 'center',
-            color: theme.palette.mode === 'dark' ? '#fff' : '#000'
+        <h1 
+          className="text-center mt-2 fw-bold" 
+          style={{
+            background: "linear-gradient(135deg, #6366f1 30%, #8b5cf6 45%, #f59e0b 60%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            width: "100%"
           }}
         >
-          Events
-        </Typography>
+        Events          
+        </h1>
         
         <Grid container spacing={4}>
           {/* Event cards will go here */}

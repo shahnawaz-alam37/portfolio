@@ -12,8 +12,11 @@ import { motion } from 'framer-motion';
 import AnimatedBackground from "../components/AnimatedBackground";
 import GlassCard from "../components/GlassCard";
 import profileimg from "../assets/photos/profile.png";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const skills = [
     "React",
     "Node.js",
@@ -90,7 +93,7 @@ const Home = () => {
                 className="fw-bold mb-3" 
                 style={{
                   fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #f59e0b 100%)",
+                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #f59e0b 80%)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -129,7 +132,7 @@ const Home = () => {
                     padding: "12px 32px",
                     fontWeight: "600"
                   }}
-                  onClick={() => window.location.href = '/projects'}
+                  onClick={() => navigate('/projects')}
                 >
                   <FaBriefcase className="me-2" /> View My Work
                 </Button>

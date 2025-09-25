@@ -35,7 +35,19 @@ const Projects = () => {
     <div className="min-vh-100 d-flex align-items-center position-relative">
       <AnimatedBackground />
       <div className="container py-5">
-        <h1 className="text-center mt-5 fw-bold">My Projects</h1>
+        <h1 
+          className="text-center mt-5 fw-bold" 
+          style={{
+            background: "linear-gradient(135deg, #6366f1 30%, #8b5cf6 45%, #f59e0b 60%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            width: "100%"
+          }}
+        >
+          My Projects
+        </h1>
         
         <div className="d-flex flex-column">
           {projects.map((project, index) => (
@@ -94,10 +106,21 @@ const Projects = () => {
 
                 {/* Content Section */}
                 <div className="col-12 col-md-7 px-4">
-                  <h2 className="fw-bold mb-4">{project.title}</h2>
+                  <h2 
+                    className="fw-bold mb-4" 
+                    style={{
+                      background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
+                      WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      display: 'inline-block'
+                    }}
+                  >
+                    {project.title}
+                  </h2>
                   
                   {project.description.map((paragraph, i) => (
-                    <p key={i} className="mb-4 text-secondary">
+                    <p key={i} className="mb-6" style={{ lineHeight: '1.6', color: 'rgba(255, 255, 255, 0.85)',fontSize: '1.1rem' }}>
                       {paragraph}
                     </p>
                   ))}

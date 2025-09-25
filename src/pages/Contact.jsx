@@ -45,28 +45,25 @@ const Contact = () => {
     >
       <AnimatedBackground />
       <Container maxWidth="md">
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            mb: 6,
-            fontWeight: 600,
-            textAlign: 'center',
-            color: theme.palette.mode === 'dark' ? '#fff' : '#000',
-            background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #f59e0b 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+       <h1 
+          className="text-center mt-5 fw-bold" 
+          style={{
+            background: "linear-gradient(135deg, #6366f1 30%, #8b5cf6 45%, #f59e0b 60%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            width: "100%"
           }}
         >
           Let's Connect
-        </Typography>
+        </h1>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {/* Social Links Card */}
           <GlassCard sx={{ p: 4 }}>
             <Typography variant="h6" sx={{ mb: 3, textAlign: 'center' }}>
-              Find me on
+              <p>Find me on</p>
             </Typography>
             <Box sx={{ 
               display: 'flex', 
@@ -99,7 +96,7 @@ const Contact = () => {
           {/* Contact Form Card */}
           <GlassCard sx={{ p: 4 }}>
             <Typography variant="h6" sx={{ mb: 3, textAlign: 'center' }}>
-              Send me a message
+              <p>Send me a message</p>
             </Typography>
             <Box
               component="form"
