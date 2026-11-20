@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Events from './pages/Events'
 import Contact from './pages/Contact'
+import AttendancePrivacyPolicy from './pages/AttendancePrivacyPolicy'
+import AttendanceTermsAndConditions from './pages/AttendanceTermsAndConditions'
 import Navbar from './components/Navbar'
 import ParticleBackground from './components/ParticleBackground'
 
@@ -85,6 +87,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/app/attendance-and-labour/privacy-policy" element={<AttendancePrivacyPolicy />} />
+            <Route path="/app/attendance-and-labour/terms-and-conditions" element={<AttendanceTermsAndConditions />} />
           </Routes>
         </motion.div>
       </ThemeProvider>
