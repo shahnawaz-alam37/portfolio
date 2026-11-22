@@ -6,7 +6,7 @@ export const site = {
   email: 'shahnawaz.alam1024@gmail.com',
   phone: '+91 9849575681',
   location: 'Hyderabad, India',
-  url: 'https://shahnawaz-alam.vercel.app',
+  url: 'https://shahnawaz.cc',
   description:
     'Software engineer building AI/ML and full-stack systems — from research to production. PyTorch, LLMs, FastAPI, React.',
   keywords: [
@@ -38,7 +38,7 @@ export const site = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Shahnawaz Alam',
-    url: 'https://shahnawaz-alam.vercel.app',
+    url: 'https://shahnawaz.cc',
     email: 'mailto:shahnawaz.alam1024@gmail.com',
     sameAs: [
       'https://github.com/shahnawaz-alam37',
