@@ -1,157 +1,58 @@
-import React from 'react'
-import { Box, Typography, Container, TextField, Button, IconButton, useTheme } from '@mui/material'
-import { GitHub, LinkedIn, Email } from '@mui/icons-material'
-import AnimatedBackground from '../components/AnimatedBackground'
-import GlassCard from '../components/GlassCard'
+import { identity } from '../content'
+import { MailIcon } from '../components/Icons'
 
-const Contact = () => {
-  const theme = useTheme()
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    const subject = encodeURIComponent(formData.get('subject'))
-    const message = encodeURIComponent(formData.get('message'))
-    window.location.href = `mailto:shahnawaz.alam1024@gmail.com?subject=${subject}&body=${message}`
+function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const form = new FormData(event.target)
+    const subject = encodeURIComponent(form.get('subject'))
+    const message = encodeURIComponent(form.get('message'))
+    window.location.href = `mailto:${identity.email}?subject=${subject}&body=${message}`
   }
 
-  const socialLinks = [
-    {
-      icon: <GitHub />,
-      href: 'https://github.com/shahnawaz-alam37',
-      label: 'GitHub'
-    },
-    {
-      icon: <LinkedIn />,
-      href: 'https://linkedin.com/in/shahnawaz-alam37',
-      label: 'LinkedIn'
-    },
-    {
-      icon: <Email />,
-      href: 'mailto:shahnawaz.alam1024@gmail.com',
-      label: 'Email'
-    }
-  ]
-
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative',
-        py: 8
-      }}
-    >
-      <AnimatedBackground />
-      <Container maxWidth="md">
-       <h1 
-          className="text-center mt-5 fw-bold" 
-          style={{
-            background: "linear-gradient(135deg, #6366f1 30%, #8b5cf6 45%, #f59e0b 60%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            width: "100%"
-          }}
-        >
-          Let's Connect
-        </h1>
+    <>
+      <header className="page-head wrap">
+        <h1 className="page-title">Contact</h1>
+        <p className="page-lede">
+          For engineering roles, research collaboration, or a conversation about applied ML systems, use the addresses below.
+        </p>
+      </header>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {/* Social Links Card */}
-          <GlassCard sx={{ p: 4 }}>
-            <Typography variant="h6" sx={{ mb: 3, textAlign: 'center' }}>
-              <p>Find me on</p>
-            </Typography>
-            <Box sx={{ 
-              display: 'flex', 
-              justifyContent: 'center',
-              gap: 3
-            }}>
-              {socialLinks.map((link) => (
-                <IconButton
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    transition: 'transform 0.2s',
-                    '&:hover': {
-                      transform: 'scale(1.1)',
-                      background: 'rgba(255, 255, 255, 0.1)'
-                    }
-                  }}
-                  aria-label={link.label}
-                >
-                  {link.icon}
-                </IconButton>
-              ))}
-            </Box>
-          </GlassCard>
+      <div className="wrap contact-grid">
+        <section aria-labelledby="contact-direct-title">
+          <h2 className="section-title" id="contact-direct-title">Direct lines</h2>
+          <a className="contact-email" href={`mailto:${identity.email}`}>{identity.email}</a>
+          <div className="contact-list">
+            <div className="contact-line"><span>Email</span><a href={`mailto:${identity.email}`}>Open client</a></div>
+            <div className="contact-line"><span>Phone</span><a href={`tel:${identity.phone.replace(/\s/g, '')}`}>{identity.phone}</a></div>
+            <div className="contact-line"><span>GitHub</span><a href={identity.github} target="_blank" rel="noreferrer">shahnawaz-alam37</a></div>
+            <div className="contact-line"><span>LinkedIn</span><a href={identity.linkedin} target="_blank" rel="noreferrer">shahnawaz-alam37</a></div>
+            {identity.researchGate && (
+              <div className="contact-line"><span>ResearchGate</span><a href={identity.researchGate} target="_blank" rel="noreferrer">Profile</a></div>
+            )}
+          </div>
+        </section>
 
-          {/* Contact Form Card */}
-          <GlassCard sx={{ p: 4 }}>
-            <Typography variant="h6" sx={{ mb: 3, textAlign: 'center' }}>
-              <p>Send me a message</p>
-            </Typography>
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 3
-              }}
-            >
-              <TextField 
-                label="Subject"
-                name="subject"
-                variant="outlined"
-                fullWidth
-                required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)'
-                  }
-                }}
-              />
-              <TextField 
-                label="Message"
-                name="message"
-                multiline
-                rows={4}
-                variant="outlined"
-                fullWidth
-                required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)'
-                  }
-                }}
-              />
-              <Button 
-                type="submit"
-                variant="contained"
-                size="large"
-                sx={{
-                  py: 1.5,
-                  background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-                  '&:hover': {
-                    background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)'
-                  }
-                }}
-              >
-                Send Message
-              </Button>
-            </Box>
-          </GlassCard>
-        </Box>
-      </Container>
-    </Box>
+        <section aria-labelledby="contact-message-title">
+          <h2 className="section-title" id="contact-message-title">Send a note</h2>
+          <form onSubmit={handleSubmit} style={{ marginTop: 24 }}>
+            <div className="field">
+              <label htmlFor="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Role, project, or research topic" />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" placeholder="A short note is enough." />
+            </div>
+            <button className="btn" type="submit">
+              Open email draft <MailIcon />
+            </button>
+            <p className="form-note">Uses your email client; no message is stored by this site.</p>
+          </form>
+        </section>
+      </div>
+    </>
   )
 }
 

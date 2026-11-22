@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T00:00:00Z",
+  "title": "Design System: Shahnawaz Alam Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Archive Ink",
+        "canonical": "#101a22",
+        "tonalRamp": ["#05090c", "#0a1218", "#101a22", "#172630", "#203440", "#2c4553", "#3c5a69", "#547585"]
+      },
+      "ink-deep": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#0a1218",
+        "tonalRamp": ["#030608", "#060b0f", "#0a1218", "#0e1922", "#13212b", "#1a2c38", "#233b49", "#2f4c5d"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Plate Ink",
+        "canonical": "#14222b",
+        "tonalRamp": ["#070d11", "#0c151b", "#101c24", "#14222b", "#1b2d38", "#243a47", "#304b5a", "#3e6071"]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone paper",
+        "canonical": "#f2efe7",
+        "tonalRamp": ["#3d3b36", "#5b574f", "#7b756a", "#9c9587", "#bdb5a5", "#d5cfc1", "#e6e2d8", "#f2efe7"]
+      },
+      "bone-dim": {
+        "role": "neutral",
+        "displayName": "Dim Bone",
+        "canonical": "#d5cfc1",
+        "tonalRamp": ["#31302c", "#4a4741", "#676256", "#857e70", "#a59c8b", "#bdb5a5", "#d5cfc1", "#e9e5db"]
+      },
+      "bone-ink": {
+        "role": "neutral",
+        "displayName": "Ink on Bone",
+        "canonical": "#2a3942",
+        "tonalRamp": ["#121b20", "#1a262d", "#21313a", "#2a3942", "#364a55", "#45606d", "#587987", "#7596a2"]
+      },
+      "copper": {
+        "role": "primary",
+        "displayName": "Signal Copper",
+        "canonical": "#c8845a",
+        "tonalRamp": ["#3a2115", "#5a3320", "#7a462b", "#9c5d38", "#c8845a", "#dba27d", "#e9bfa2", "#f5dcc9"]
+      },
+      "copper-deep": {
+        "role": "primary",
+        "displayName": "Deep Copper",
+        "canonical": "#9c5d38",
+        "tonalRamp": ["#301b10", "#4a2b1a", "#683d25", "#824c2f", "#9c5d38", "#b67850", "#cc9570", "#dfb494"]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Instrument Slate",
+        "canonical": "#93a6ae",
+        "tonalRamp": ["#26343a", "#384b53", "#50656e", "#6c828b", "#93a6ae", "#adbcc2", "#c6d0d4", "#dce3e5"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Dark Keyline",
+        "canonical": "rgba(242, 239, 231, 0.17)",
+        "tonalRamp": ["rgba(242,239,231,0.04)", "rgba(242,239,231,0.07)", "rgba(242,239,231,0.10)", "rgba(242,239,231,0.13)", "rgba(242,239,231,0.17)", "rgba(242,239,231,0.24)", "rgba(242,239,231,0.34)", "rgba(242,239,231,0.48)"]
+      },
+      "rule-bone": {
+        "role": "neutral",
+        "displayName": "Bone Keyline",
+        "canonical": "rgba(16, 26, 34, 0.22)",
+        "tonalRamp": ["rgba(16,26,34,0.06)", "rgba(16,26,34,0.10)", "rgba(16,26,34,0.14)", "rgba(16,26,34,0.18)", "rgba(16,26,34,0.22)", "rgba(16,26,34,0.30)", "rgba(16,26,34,0.40)", "rgba(16,26,34,0.55)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles, hero identity, and measured figures." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and project titles." },
+      "title": { "displayName": "Title", "purpose": "Paper titles and major plate headings." },
+      "body": { "displayName": "Body", "purpose": "Prose with a 64–70ch reading measure." },
+      "label": { "displayName": "Label", "purpose": "Plate heads, navigation, indexes, metadata, and form labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state", "value": "180ms ease", "purpose": "Colour and border transitions on controls and navigation." },
+      { "name": "plate-mount", "value": "420ms cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "Single page-entry wipe; reduced-motion users receive 0.01ms." }
+    ],
+    "breakpoints": [
+      { "name": "rail-collapse", "value": "1100px" },
+      { "name": "single-column", "value": "820px" },
+      { "name": "compact", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Dark square action used for the main page action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#work\">OPEN WORK</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:11px 17px; border:1px solid var(--ink,#101a22); border-radius:0; background:var(--ink,#101a22); color:var(--bone,#f2efe7); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:11px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; cursor:pointer; } .ds-btn-primary:hover { border-color:var(--copper-deep,#9c5d38); background:var(--copper-deep,#9c5d38); } .ds-btn-primary:focus-visible { outline:2px solid var(--copper,#c8845a); outline-offset:3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on bone plates.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">RESUME</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:11px 17px; border:1px solid var(--rule-bone,rgba(16,26,34,.22)); border-radius:0; background:transparent; color:var(--ink,#101a22); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:11px; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; } .ds-btn-ghost:hover { border-color:var(--ink,#101a22); background:var(--ink,#101a22); color:var(--bone,#f2efe7); } .ds-btn-ghost:focus-visible { outline:2px solid var(--copper,#c8845a); outline-offset:3px; }"
+    },
+    {
+      "name": "Signal Button",
+      "kind": "button",
+      "refersTo": "button-signal",
+      "description": "Copper action for high-intent links.",
+      "html": "<button class=\"ds-btn-signal\" type=\"button\">OPEN EMAIL DRAFT</button>",
+      "css": ".ds-btn-signal { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:11px 17px; border:1px solid var(--copper,#c8845a); border-radius:0; background:var(--copper,#c8845a); color:var(--ink,#101a22); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:11px; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; } .ds-btn-signal:hover { border-color:var(--bone,#f2efe7); background:var(--bone,#f2efe7); color:var(--ink,#101a22); } .ds-btn-signal:focus-visible { outline:2px solid var(--copper,#c8845a); outline-offset:3px; }"
+    },
+    {
+      "name": "Dark Plate",
+      "kind": "card",
+      "refersTo": "plate",
+      "description": "Measured evidence container on dark ground.",
+      "html": "<section class=\"ds-plate\"><header class=\"ds-plate-head\"><span>PLATE 02 / MEASURED WORK</span><span>FILE SA-1024</span></header><p class=\"ds-plate-body\">Figures recorded from shipped systems.</p></section>",
+      "css": ".ds-plate { position:relative; border:1px solid var(--rule,rgba(242,239,231,.17)); background:var(--ink-soft,#14222b); color:var(--bone,#f2efe7); padding:clamp(20px,2.4vw,32px); border-radius:0; } .ds-plate::before { content:''; position:absolute; top:-1px; left:-1px; width:11px; height:11px; border-top:1px solid var(--copper,#c8845a); border-left:1px solid var(--copper,#c8845a); } .ds-plate::after { content:''; position:absolute; right:-1px; bottom:-1px; width:11px; height:11px; border-right:1px solid var(--copper,#c8845a); border-bottom:1px solid var(--copper,#c8845a); } .ds-plate-head { display:flex; justify-content:space-between; gap:12px; padding-bottom:12px; margin-bottom:24px; border-bottom:1px solid var(--rule,rgba(242,239,231,.17)); color:var(--slate,#93a6ae); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:10px; letter-spacing:.12em; text-transform:uppercase; } .ds-plate-body { margin:0; font-family:var(--font-body,'Manrope','Segoe UI',sans-serif); font-size:14px; }"
+    },
+    {
+      "name": "Bone Plate",
+      "kind": "card",
+      "refersTo": "plate-bone",
+      "description": "Document-like identity plate.",
+      "html": "<article class=\"ds-plate-bone\"><header class=\"ds-plate-bone-head\"><span>PLATE 01 / IDENTITY</span><span>FILE SA-1024</span></header><h1 class=\"ds-plate-title\">Shahnawaz Alam</h1><p class=\"ds-plate-role\">Software Engineer · AI/ML &amp; Full-Stack Systems</p></article>",
+      "css": ".ds-plate-bone { position:relative; border:1px solid var(--rule-bone,rgba(16,26,34,.22)); background:var(--bone,#f2efe7); color:var(--ink,#101a22); padding:clamp(20px,2.4vw,32px); border-radius:0; } .ds-plate-bone::before { content:''; position:absolute; top:-1px; left:-1px; width:11px; height:11px; border-top:1px solid var(--copper-deep,#9c5d38); border-left:1px solid var(--copper-deep,#9c5d38); } .ds-plate-bone::after { content:''; position:absolute; right:-1px; bottom:-1px; width:11px; height:11px; border-right:1px solid var(--copper-deep,#9c5d38); border-bottom:1px solid var(--copper-deep,#9c5d38); } .ds-plate-bone-head { display:flex; justify-content:space-between; gap:12px; padding-bottom:12px; margin-bottom:24px; border-bottom:1px solid var(--rule-bone,rgba(16,26,34,.22)); color:var(--bone-ink,#2a3942); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:10px; letter-spacing:.12em; text-transform:uppercase; } .ds-plate-title { margin:0; font-family:var(--font-display,'Bricolage Grotesque','Arial Narrow',sans-serif); font-size:clamp(2.4rem,4.3vw,4.4rem); font-weight:600; letter-spacing:-.025em; line-height:1.06; } .ds-plate-role { margin:12px 0 0; color:var(--bone-ink,#2a3942); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:11px; letter-spacing:.08em; line-height:1.6; text-transform:uppercase; }"
+    },
+    {
+      "name": "Field Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square keyline input used in the contact form.",
+      "html": "<label class=\"ds-field\"><span>SUBJECT</span><input class=\"ds-input\" type=\"text\" placeholder=\"Role, project, or research topic\" /></label>",
+      "css": ".ds-field { display:flex; flex-direction:column; gap:8px; } .ds-field > span { color:var(--slate,#93a6ae); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:10px; letter-spacing:.1em; text-transform:uppercase; } .ds-input { width:100%; padding:13px 14px; border:1px solid var(--rule,rgba(242,239,231,.17)); border-radius:0; background:var(--ink-soft,#14222b); color:var(--bone,#f2efe7); font-family:var(--font-body,'Manrope','Segoe UI',sans-serif); font-size:14px; } .ds-input:hover { border-color:var(--slate,#93a6ae); } .ds-input:focus-visible { outline:2px solid var(--copper,#c8845a); outline-offset:3px; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Monospaced header link with copper active rule.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link is-active\" href=\"/\">IDENTITY</a><a class=\"ds-nav-link\" href=\"/projects\">WORK</a></nav>",
+      "css": ".ds-nav { display:flex; gap:24px; } .ds-nav-link { position:relative; padding:26px 0 24px; border-bottom:2px solid transparent; color:var(--slate,#93a6ae); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:11px; letter-spacing:.12em; text-decoration:none; text-transform:uppercase; } .ds-nav-link:hover, .ds-nav-link.is-active { color:var(--bone,#f2efe7); border-bottom-color:var(--copper,#c8845a); } .ds-nav-link:focus-visible { outline:2px solid var(--copper,#c8845a); outline-offset:3px; }"
+    },
+    {
+      "name": "Fact Label",
+      "kind": "chip",
+      "description": "Evidence tag used for project facts and pipeline steps.",
+      "html": "<span class=\"ds-fact\">&lt;200 MS INFERENCE</span>",
+      "css": ".ds-fact { display:inline-flex; padding:7px 10px; border:1px solid var(--rule,rgba(242,239,231,.17)); border-radius:0; color:var(--bone-dim,#d5cfc1); font-family:var(--font-mono,'JetBrains Mono',Consolas,monospace); font-size:10px; letter-spacing:.04em; text-transform:uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Evidence Atlas",
+    "overview": "This is a portfolio built as a research institute's evidence wall, not a stack of cards. Every surface is a numbered plate held inside thin keylines, with rulers, file marks, and monospaced captions that make the work feel catalogued and inspectable. The ground is deep slate; bone plates carry identity; copper appears only as signal, measurement, or active state.\n\nThe system is dense but calm. Display type is constructed and compressed, body copy is neutral and readable, and all supporting information is set in a monospaced register. Figures are presented as measured evidence with sources, and project pipelines are exposed as sequences rather than hidden inside marketing tiles. The result should read as credible to engineering recruiters and research collaborators before it reads as decoration.",
+    "keyCharacteristics": [
+      "Numbered plates, keyline boxes, ruler bars, and file-style captions",
+      "Slate ink ground, bone document plates, copper signal accent",
+      "Display grotesk for names and titles, neutral sans for prose, monospaced labels for evidence",
+      "Flat surfaces with no shadows, glass, pills, or decorative gradients",
+      "A single-axis ruled background at 48px intervals; never a two-axis grid"
+    ],
+    "rules": [
+      { "name": "The 10% Signal Rule", "body": "Copper marks state, measurement, or navigation. It never becomes a large field.", "section": "colors" },
+      { "name": "The Keyline Rule", "body": "Structure is made with 1px rules and corner ticks, never with shadows or glass.", "section": "colors" },
+      { "name": "The Mono Label Rule", "body": "Anything that classifies, numbers, or measures content uses the monospaced face.", "section": "typography" },
+      { "name": "The Flat Plate Rule", "body": "Surfaces stay flat at rest and on hover; movement is expressed by rule colour, tonal shift, or a small horizontal nudge.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use 1px keylines and 11px copper corner ticks to define plate edges.",
+      "Do set classifying and measuring text in JetBrains Mono with 0.12em letter spacing.",
+      "Do keep the plate rail and header navigation in the same order.",
+      "Do use the middle dot (U+00B7) as the inline separator in labels and stacks.",
+      "Do pair a technology mark with its text label and keep it monochrome."
+    ],
+    "donts": [
+      "Don't introduce glass blur, gradient text, pill corners, or hard offset shadows.",
+      "Don't use a two-axis grid background; the ground is a single horizontal 48px ruling.",
+      "Don't build pages from generic icon-heading-text cards; use plates, rows, and pipelines.",
+      "Don't enlarge copper beyond an accent role."
+    ]
+  }
+}

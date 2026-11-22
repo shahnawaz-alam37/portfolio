@@ -1,0 +1,35 @@
+export const hackathons = [
+  {
+    id: 'dr-ai',
+    event: '36-Hour Hackathon',
+    year: '2024',
+    project: 'Dr.AI — Real-time medical simulation platform',
+    result: 'Participant',
+    note: 'Built a Flask backend for concurrent voice sessions with LLM-driven evaluation feedback.',
+    href: 'https://github.com/shahnawaz-alam37',
+  },
+  {
+    id: 'hack-2',
+    event: 'TODO Hackathon',
+    year: '2025',
+    project: 'TODO — describe what you built',
+    result: 'Winner',
+    note: 'TODO: one-line description of the project and outcome.',
+  },
+  {
+    id: 'hack-3',
+    event: 'TODO Hackathon',
+    year: '2025',
+    project: 'TODO — describe what you built',
+    result: 'Finalist',
+    note: 'TODO: one-line description of the project and outcome.',
+  },
+  {
+    id: 'hack-4',
+    event: 'TODO Hackathon',
+    year: '2024',
+    project: 'TODO — describe what you built',
+    result: 'Top 10',
+    note: 'TODO: one-line description of the project and outcome.',
+  },
+]
