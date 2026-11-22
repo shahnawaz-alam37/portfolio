@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 const GlassCard = ({ 
   children, 
@@ -10,7 +10,7 @@ const GlassCard = ({
   ...props 
 }) => {
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
@@ -36,7 +36,7 @@ const GlassCard = ({
       >
         {children}
       </Box>
-    </motion.div>
+    </Motion.div>
   )
 }
 

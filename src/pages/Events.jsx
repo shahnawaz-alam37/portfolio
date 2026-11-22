@@ -1,40 +1,28 @@
-import React from 'react'
-import { Box, Typography, Container, Grid, useTheme } from '@mui/material'
-import AnimatedBackground from '../components/AnimatedBackground'
+import { activity } from '../content'
 
-const Events = () => {
-  const theme = useTheme()
-
+function Events() {
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        pt: 12,
-        pb: 6,
-        position: 'relative'
-      }}
-    >
-      <AnimatedBackground />
-      <Container maxWidth="lg">
-        <h1 
-          className="text-center mt-2 fw-bold" 
-          style={{
-            background: "linear-gradient(135deg, #6366f1 30%, #8b5cf6 45%, #f59e0b 60%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            width: "100%"
-          }}
-        >
-        Events          
-        </h1>
-        
-        <Grid container spacing={4}>
-          {/* Event cards will go here */}
-        </Grid>
-      </Container>
-    </Box>
+    <>
+      <header className="page-head wrap">
+        <h1 className="page-title">Activity</h1>
+        <p className="page-lede">
+          Workshops, team leadership, and time-boxed builds that shaped the engineering practice behind the project archive.
+        </p>
+      </header>
+
+      <div className="wrap">
+        {activity.map((item) => (
+          <article className="activity-row" key={item.number}>
+            <div className="paper-id">{item.number}</div>
+            <div>
+              <h2>{item.title}</h2>
+              <p>{item.detail}</p>
+            </div>
+            <div className="role-period">{item.period}</div>
+          </article>
+        ))}
+      </div>
+    </>
   )
 }
 
