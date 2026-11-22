@@ -1,6 +1,7 @@
 import medinsightOne from './assets/photos/medinsight 1.jpg'
 import medinsightTwo from './assets/photos/medinsight 2.jpg'
 import draiImage from './assets/photos/drai 1.png'
+const plantPathologyArchitecture = '/images/diagrams/plant-pathology-architecture.png'
 
 export const identity = {
   name: 'Shahnawaz Alam',
@@ -11,7 +12,7 @@ export const identity = {
   phone: '+91 9849575681',
   github: 'https://github.com/shahnawaz-alam37',
   linkedin: 'https://linkedin.com/in/shahnawaz-alam37',
-  researchGate: '',
+  researchGate: 'https://www.researchgate.net/profile/Shahnawaz-Alam-14',
 }
 
 export const metrics = [
@@ -68,6 +69,8 @@ export const projects = [
       'Applied structured model pruning to reduce ResNet18 size by 40% without significant accuracy loss.',
       'Developed a cross-platform React Native (Expo) client with camera integration and live inference feedback.',
     ],
+    images: [plantPathologyArchitecture],
+    imageAlt: 'Plant Pathology interface screenshots',
     pipeline: ['Leaf / not-leaf', '31-class disease model', 'FastAPI inference', 'Expo mobile client'],
     facts: ['<200 ms inference', '40% smaller model', '31 disease classes'],
     githubUrl: '',

@@ -83,7 +83,17 @@ export default function CaseStudy() {
           </section>
           <section className="case-block">
             <h2 className="label case-label">Architecture</h2>
-            <div className="case-placeholder label">Architecture diagram placeholder</div>
+            {project.caseStudy.architecture ? (
+              <figure className="case-figure">
+                <img
+                  src={project.caseStudy.architecture}
+                  alt={project.caseStudy.architectureAlt || `${project.title} architecture diagram`}
+                  loading="lazy"
+                />
+              </figure>
+            ) : (
+              <div className="case-placeholder label">Architecture diagram placeholder</div>
+            )}
           </section>
         </div>
       </div>

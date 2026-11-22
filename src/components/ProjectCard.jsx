@@ -31,10 +31,19 @@ export default function ProjectCard({ project }) {
         to={`/work/${project.slug}`}
         aria-label={`Open ${project.title} case study`}
       >
+        {project.cover ? (
+          <img
+            className="card-image"
+            src={project.cover}
+            alt={project.coverAlt || `${project.title} preview`}
+            loading="lazy"
+          />
+        ) : (
+          <span className="card-monogram">{monogram(project.title)}</span>
+        )}
         <span className={project.category === 'ai' ? 'card-category cat-ai label' : 'card-category cat-swe label'}>
           {project.category === 'ai' ? 'AI / ML' : 'Software'}
         </span>
-        <span className="card-monogram">{monogram(project.title)}</span>
       </Link>
 
       <div className="card-body">

@@ -3,6 +3,7 @@ import { orderedOrbitSkills } from '../data/orbit'
 import { cn } from '../lib/utils'
 
 const RADII = { 1: 90, 2: 160, 3: 230 }
+const RINGS = [1, 2, 3]
 const SIZE = 520
 
 export default function OrbitHero({ role }) {
@@ -24,6 +25,11 @@ export default function OrbitHero({ role }) {
       target.current = { x: 0, y: 0 }
     }
 
+    const observer = new IntersectionObserver(([entry]) => {
+      field.classList.toggle('is-paused', !entry.isIntersecting)
+    })
+    observer.observe(field)
+
     field.addEventListener('pointermove', onMove)
     field.addEventListener('pointerleave', onLeave)
 
@@ -41,6 +47,7 @@ export default function OrbitHero({ role }) {
 
     return () => {
       cancelAnimationFrame(frame)
+      observer.disconnect()
       field.removeEventListener('pointermove', onMove)
       field.removeEventListener('pointerleave', onLeave)
     }
@@ -51,7 +58,7 @@ export default function OrbitHero({ role }) {
   return (
     <div className="orbit" role="img" aria-label="Diagram of core skills by discipline">
       <div className="orbit-field" ref={fieldRef}>
-        {[1, 2, 3].map((ring) => {
+        {RINGS.map((ring) => {
           const size = `${((RADII[ring] * 2) / SIZE) * 100}%`
           return <span className="orbit-ring" key={ring} style={{ width: size, height: size }} />
         })}
@@ -61,28 +68,36 @@ export default function OrbitHero({ role }) {
           <span className="label orbit-center-label">Me</span>
         </div>
 
-        {skills.map((skill) => {
-          const radius = RADII[skill.ring]
-          const angle = (skill.angle * Math.PI) / 180
-          const x = Math.cos(angle) * radius
-          const y = Math.sin(angle) * radius
-          const dimmed = role !== 'all' && !(
-            (role === 'ai' && skill.category === 'ai') ||
-            (role === 'swe' && skill.category === 'swe')
-          )
-
+        {RINGS.map((ring) => {
+          const size = `${((RADII[ring] * 2) / SIZE) * 100}%`
           return (
-            <span
-              key={skill.label}
-              className={cn('orbit-dot', `orbit-dot-${skill.category}`, dimmed && 'is-dimmed')}
-              style={{
-                left: `${50 + (x / SIZE) * 100}%`,
-                top: `${50 + (y / SIZE) * 100}%`,
-              }}
-              title={skill.label}
+            <div
+              className={cn('orbit-ring-group', `orbit-ring-${ring}`)}
+              key={ring}
+              style={{ width: size, height: size }}
             >
-              <span className="label orbit-dot-label">{skill.label}</span>
-            </span>
+              {skills.filter((skill) => skill.ring === ring).map((skill) => {
+                const angle = (skill.angle * Math.PI) / 180
+                const dimmed = role !== 'all' && !(
+                  (role === 'ai' && skill.category === 'ai') ||
+                  (role === 'swe' && skill.category === 'swe')
+                )
+
+                return (
+                  <span
+                    key={skill.label}
+                    className={cn('orbit-item', `orbit-item-${skill.category}`, dimmed && 'is-dimmed')}
+                    style={{
+                      left: `${50 + Math.cos(angle) * 50}%`,
+                      top: `${50 + Math.sin(angle) * 50}%`,
+                    }}
+                  >
+                    <span className="orbit-item-dot" aria-hidden="true" />
+                    <span className="orbit-item-label">{skill.label}</span>
+                  </span>
+                )
+              })}
+            </div>
           )
         })}
       </div>

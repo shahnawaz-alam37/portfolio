@@ -24,8 +24,8 @@ export const site = {
   social: {
     github: 'https://github.com/shahnawaz-alam37',
     linkedin: 'https://linkedin.com/in/shahnawaz-alam37',
-    scholar: 'https://scholar.google.com',
-    researchgate: 'https://www.researchgate.net',
+    scholar: 'https://scholar.google.com/citations?user=gMBJ9jMAAAAJ&hl=en&oi=ao',
+    researchgate: 'https://www.researchgate.net/profile/Shahnawaz-Alam-14',
   },
   nav: [
     { label: 'Work', href: '/#work' },

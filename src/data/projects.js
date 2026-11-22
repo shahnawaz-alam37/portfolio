@@ -11,6 +11,8 @@ export const projects = [
     tech: ['PyTorch', 'FastAPI', 'React Native', 'AWS'],
     links: [{ label: 'GitHub', href: GITHUB }],
     impact: '200ms inference on mobile with a 40% smaller model.',
+    cover: '/images/projects/plant-pathology-cover.png',
+    coverAlt: 'Plant Pathology two-stage inference pipeline',
     metrics: [
       { label: 'Model size reduction', value: '40%' },
       { label: 'Inference latency', value: '<200ms' },
@@ -27,6 +29,8 @@ export const projects = [
         'Cross-platform React Native (Expo) client with live camera feedback.',
       ],
       stack: ['PyTorch', 'FastAPI', 'React Native', 'Expo', 'AWS'],
+      architecture: '/images/diagrams/plant-pathology-architecture.png',
+      architectureAlt: 'Plant pathology two-stage inference pipeline',
     },
   },
   {
